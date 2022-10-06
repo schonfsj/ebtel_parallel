@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<root>
+  <tau>1.0</tau>
+  <saturation_limit>1.0</saturation_limit>
+  <force_single_fluid>True</force_single_fluid>
+  <use_c1_loss_correction>True</use_c1_loss_correction>
+  <use_c1_grav_correction>True</use_c1_grav_correction>
+  <use_power_law_radiative_losses>True</use_power_law_radiative_losses>
+  <use_flux_limiting>True</use_flux_limiting>
+  <calculate_dem>True</calculate_dem>
+  <save_terms>False</save_terms>
+  <use_adaptive_solver>True</use_adaptive_solver>
+  <output_filename>tmp/epp_results</output_filename>
+  <adaptive_solver_error>1e-6</adaptive_solver_error>
+  <adaptive_solver_safety>0.5</adaptive_solver_safety>
+  <c1_cond0>2.0</c1_cond0>
+  <c1_rad0>0.6</c1_rad0>
+  <helium_to_hydrogen_ratio>0.075</helium_to_hydrogen_ratio>
+  <surface_gravity>1.0</surface_gravity>
+  <frequency_scale>1</frequency_scale>
+  <max_event_factor>3</max_event_factor>
+  <cooling_times>1000</cooling_times>
+  <duration>100</duration>
+  <alpha>-2.5</alpha>
+  <random_seed>1</random_seed>
+  <dem>
+    <use_new_method>True</use_new_method>
+    <temperature bins="451" log_min="4" log_max="8.5"/>
+  </dem>
+  <heating>
+    <partition>1.0</partition>
+    <events>
+      <event magnitude="0.01" rise_start="0.0" rise_end="249.0" decay_start="250.0" decay_end="500.0"/>
+    </events>
+  </heating>
+</root>

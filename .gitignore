@@ -1,0 +1,10 @@
+# Ignore outputs and everything in cache directories
+gx_sav/*
+runs/*
+tmp/*
+.ipynb_checkpoints/*
+__pycache__
+__pycache__/*
+
+# re-include configuration files in the runs directory
+!runs/*.cfg.xml

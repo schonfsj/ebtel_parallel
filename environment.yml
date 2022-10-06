@@ -1,0 +1,14 @@
+name: ebtel
+channels:
+  - defaults
+dependencies:
+  - jupyterlab
+  - scipy
+  - joblib
+  - numpy
+  - matplotlib
+  - python=3.8
+  - astropy
+  - jupytext
+  - scons
+  - seaborn
