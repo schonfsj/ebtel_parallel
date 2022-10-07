@@ -8,3 +8,5 @@ __pycache__/*
 
 # re-include configuration files in the runs directory
 !runs/*.cfg.xml
+!tmp/
+!gx_sav/
