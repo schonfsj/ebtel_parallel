@@ -1,0 +1,3 @@
+[submodule "PDS4-IDL"]
+	path = PDS4-IDL
+	url = https://github.com/Small-Bodies-Node/PDS4-IDL
