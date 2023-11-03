@@ -22,7 +22,7 @@ pro ebtelplusplus_read, filename, file_dir=file_dir
     stop
   ENDIF
 
-  cfg_pos = where(strmatch(files, filename+'.cfg.xml'))
+  cfg_pos = where(strmatch(files, file_dir+filename+'.cfg.xml'))
   IF cfg_pos ne -1 THEN BEGIN
     cfg_struct = read_xml((files[cfg_pos])[0])
     cfg = cfg_struct.root
@@ -31,7 +31,7 @@ pro ebtelplusplus_read, filename, file_dir=file_dir
     stop
   ENDELSE
 
-  params_pos = where(strmatch(files, filename+'_params.txt'))
+  params_pos = where(strmatch(files, file_dir+filename+'_params.txt'))
   IF params_pos ne -1 THEN BEGIN
     readcol,files[params_pos], $
             hhp,llp,lrun1,qrun1,trun1,format='L,L,F,F,F',skipline=1
@@ -40,7 +40,7 @@ pro ebtelplusplus_read, filename, file_dir=file_dir
     stop
   ENDELSE
 
-  dems_pos = where(strmatch(files, filename+'_dems.txt'))
+  dems_pos = where(strmatch(files, file_dir+filename+'_dems.txt'))
   IF params_pos ne -1 THEN BEGIN
     readcol,files[dems_pos], $
             hhd,lld,logt1,tr1,cor1,ddmtr1,ddmcor1, $
@@ -86,9 +86,9 @@ pro ebtelplusplus_read, filename, file_dir=file_dir
   ddm_tr_run[lgt,hhd-hmin,lld-lmin] = ddmtr1
   ddm_cor_run[lgt,hhd-hmin,lld-lmin] = ddmcor1
 
-  save,filename=file_dir+'gx_sav/'+filename+'.sav', $
+  save,filename='gx_sav/'+filename+'.sav', $
       cfg,logtdem,lrun,qrun,trun,dem_tr_run,dem_cor_run,ddm_tr_run,ddm_cor_run
-  print, 'Save file written to ' +file_dir+'gx_sav/'+filename+'.sav'
+  print, 'Save file written to gx_sav/'+filename+'.sav'
 
   IF strpos(filename,'test') ne -1 THEN BEGIN ;filename with 'test' in it
     logtdem_t = logtdem

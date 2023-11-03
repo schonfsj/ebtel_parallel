@@ -116,7 +116,7 @@ def heating_power_law(rate = 1e-3, time = 1e4, dt = 50,
     t_next = -1   # Setting t<0 ensures loop is initiated with active heating
     while t_next < time:
         # Generate random delay time until the next event
-        delay = np.asscalar(power_functions.power_random(alpha,tau_min,tau_max,
+        delay = np.ndarray.item(power_functions.power_random(alpha,tau_min,tau_max,
                                                          rng=rng))
 
         # Adjust the last heating event to fit within the time series
